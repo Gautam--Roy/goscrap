@@ -34,6 +34,7 @@ func main() {
 
 	if flag.Url != "" {
 		scrapUrl(flag.Url, flag.ApiKey, flag.ReturnType)
+		os.Exit(0)
 	}
 
 	if flag.Sitemap != "" {
@@ -62,6 +63,8 @@ func main() {
 		}
 
 		fmt.Println(urlSet.URLs[0])
+		// TODO
+		// Run scrap urls for each url inside goroutines
 		os.Exit(0)
 	}
 }
@@ -124,5 +127,4 @@ func scrapUrl(url string, api string, returnType string) {
 	log.Print(string(bytes))
 
 	res.Body.Close()
-	os.Exit(0)
 }
