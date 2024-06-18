@@ -11,7 +11,7 @@ This repository contains a Go-based scraper tool for extracting content from URL
 ## Prerequisites
 
 - Go 1.16 or later
-- JinaAI reader API key
+[JinaAI reader API Key](https://jina.ai/reader/)
 
 ## Installation
 
