@@ -1,4 +1,4 @@
-# JinaAI Scraper
+# JinaAI Scraper (CLI Tool)
 
 This repository contains a Go-based scraper tool for extracting content from URLs or sitemaps and returning it in various formats such as HTML, MDX, or plain text. The tool leverages the JinaAI reader API to perform content extraction.
 
@@ -11,7 +11,7 @@ This repository contains a Go-based scraper tool for extracting content from URL
 ## Prerequisites
 
 - Go 1.16 or later
-[JinaAI reader API Key](https://jina.ai/reader/)
+- [JinaAI reader API Key](https://jina.ai/reader/)
 
 ## Installation
 
