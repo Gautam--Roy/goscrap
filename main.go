@@ -71,8 +71,7 @@ func main() {
 		for _, url := range urlSet.URLs {
 
 			go func(url string) {
-				// scrapUrl(url, flag.ApiKey, flag.ReturnType)
-        fmt.Println("scrapping link:", url)
+				scrapUrl(url, flag.ApiKey, flag.ReturnType)
 				wg.Done()
 			}(url.Loc)
 
