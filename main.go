@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"sync"
 )
 
 func main() {
@@ -62,9 +63,23 @@ func main() {
 			log.Fatal("There was an error while Decoding xml file at ScrapToFile: ", err.Error())
 		}
 
-		fmt.Println(urlSet.URLs[0])
-		// TODO
-		// Run scrap urls for each url inside goroutines
+
+		var wg sync.WaitGroup
+
+		wg.Add(len(urlSet.URLs))
+
+		for _, url := range urlSet.URLs {
+
+			go func(url string) {
+				// scrapUrl(url, flag.ApiKey, flag.ReturnType)
+        fmt.Println("scrapping link:", url)
+				wg.Done()
+			}(url.Loc)
+
+		}
+
+		wg.Wait()
+		fmt.Println("SiteMap scrap completed")
 		os.Exit(0)
 	}
 }
