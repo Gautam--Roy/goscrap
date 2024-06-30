@@ -63,7 +63,6 @@ func main() {
 			log.Fatal("There was an error while Decoding xml file at ScrapToFile: ", err.Error())
 		}
 
-
 		var wg sync.WaitGroup
 
 		wg.Add(len(urlSet.URLs))
