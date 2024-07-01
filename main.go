@@ -137,7 +137,7 @@ func scrapUrl(url string, api string, returnType string) {
 		log.Fatal("Error reading response body: ", err.Error())
 	}
 
-	log.Print(string(bytes))
+	fmt.Println(string(bytes))
 
 	res.Body.Close()
 }
